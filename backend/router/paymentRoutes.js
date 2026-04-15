@@ -2,8 +2,8 @@ const express = require('express');
 const { checkout,sendkey,paymentVerification } = require('../controllers/paymentControllers');
 const router = express.Router();
 
-router.route('/checkout').post(checkout);
-router.route('/paymentverification').post(paymentVerification);
-router.route('/getkey').get(sendkey);
+router.post('/checkout', (req, res) => checkout(req, res));
+router.post('/paymentverification', (req, res) => paymentVerification(req, res));
+router.get('/getkey', (req, res) => sendkey(req, res));
 
 module.exports = router;

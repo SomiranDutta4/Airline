@@ -5,18 +5,12 @@ const { searchFlight, bookFlight, getBookedFlights, getUserDetails, updateUserDe
 
 
 
-/* GET Methods */
-router.route('/getbookedflights').get(getBookedFlights);
-router.route('/getuserdetails').get(getUserDetails);
-
-/* POST Methods */
-router.route('/bookflight').post(bookFlight);
-router.route('/canbook').post(alreadybooked);
-router.route('/searchflight').post(searchFlight);
-router.route('/searchAllFlights').post(searchAllFlights);
-
-/* PUT Methods */
-router.route('/updateuserdetails').put(updateUserDetails);
-
+router.get('/getbookedflights', (req, res) => getBookedFlights(req, res));
+router.get('/getuserdetails', (req, res) => getUserDetails(req, res));
+router.post('/bookflight', (req, res) => bookFlight(req, res));
+router.post('/canbook', (req, res) => alreadybooked(req, res));
+router.post('/searchflight', (req, res) => searchFlight(req, res));
+router.post('/searchAllFlights', (req, res) => searchAllFlights(req, res));
+router.put('/updateuserdetails', (req, res) => updateUserDetails(req, res));
 
 module.exports = router;

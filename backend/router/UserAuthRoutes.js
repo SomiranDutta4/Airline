@@ -3,13 +3,9 @@ const { register,login, verifyUser} = require('../controllers/authControllers');
 const router = Router();
 const authMiddleware = require('../middleware/authMiddleware')
 
-/* POST Methods */
 
-router.route('/register').post(register) // register user
-router.route('/login').post(login) // login user
-
-/* GET Methods */
-router.route('/verify').get(authMiddleware,verifyUser) // authenicate user
-
+router.post('/register', (req, res) => register(req, res));
+router.post('/login', (req, res) => login(req, res));
+router.get('/verify', authMiddleware, (req, res) => verifyUser(req, res));
 
 module.exports = router
