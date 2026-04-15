@@ -1,4 +1,3 @@
-// backend/routes/flights.js
 const express = require('express');
 const router = express.Router();
 const { searchFlight, bookFlight, getBookedFlights, getUserDetails, updateUserDetails,alreadybooked, searchAllFlights } = require('../controllers/appController');

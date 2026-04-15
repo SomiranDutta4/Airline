@@ -1,4 +1,3 @@
-// backend/routes/feedbackRoutes.js
 const express = require('express');
 const router = express.Router();
 const { addFeedback, getAllFeedback } = require('../controllers/feedbackController');
