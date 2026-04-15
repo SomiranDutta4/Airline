@@ -50,7 +50,7 @@ function MyFlights() {
             setIsLoading(false)
         }, 1500);
     }, []);
-
+    
     return (
         <div>
             <div className={isLoading ? 'loading' : 'loaded'}>

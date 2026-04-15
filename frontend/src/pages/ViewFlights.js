@@ -9,7 +9,7 @@ import SearchForm from '../components/SearchForm';
 function ViewFlights({ setViewFlightData, viewFlightData, setBookFlightData }) {
     const [isLoading, setIsLoading] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
-    const [pageSize] = useState(5); // Number of flights per page
+    const [pageSize] = useState(5); 
 
     useEffect(() => {
         setTimeout(() => {
@@ -17,19 +17,16 @@ function ViewFlights({ setViewFlightData, viewFlightData, setBookFlightData }) {
         }, 1500);
     }, []);
 
-    // Calculate the current flights to display based on pagination
     const indexOfLastFlight = currentPage * pageSize;
     const indexOfFirstFlight = indexOfLastFlight - pageSize;
     const currentFlights = viewFlightData.slice(indexOfFirstFlight, indexOfLastFlight);
 
-    // Function to handle click for previous page
     const prevPage = () => {
         if (currentPage > 1) {
             setCurrentPage(currentPage - 1);
         }
     };
 
-    // Function to handle click for next page
     const nextPage = () => {
         if (currentPage < Math.ceil(viewFlightData.length / pageSize)) {
             setCurrentPage(currentPage + 1);

@@ -50,7 +50,6 @@ function MyFlightDetails() {
     }
 
     useEffect(() => {
-        // if({isAuthenticated})fetch_data();
         setTimeout(() => {
             setIsLoading(false)
         }, 1500);
