@@ -22,7 +22,7 @@ const PaymentSchema = new mongoose.Schema({
     razorpay_signature:{
         type:String,
         required:true
-    },
+    }
 })
 
 module.exports = mongoose.model('Payment' ,PaymentSchema)
